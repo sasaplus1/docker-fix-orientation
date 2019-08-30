@@ -15,6 +15,13 @@ all: ## output targets
 build: ## build Docker image
 	DOCKER_BUILDKIT=1 docker build -t $(tag) .
 
+.PHONY: pull-run
+pull-run: image := sasaplus1/docker-fix-orientation
+pull-run: options := --interactive --rm --tty --volume $$(pwd)/share:/root/share
+pull-run:
+	docker pull $(image)
+	docker run $(options) $(image)
+
 .PHONY: run
 run: options := --interactive --rm --tty --volume $$(pwd)/share:/root/share
 run: ## run Docker container and attach TTY
