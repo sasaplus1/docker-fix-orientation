@@ -18,7 +18,7 @@ build: ## build Docker image
 .PHONY: pull-run
 pull-run: image := sasaplus1/docker-fix-orientation
 pull-run: options := --interactive --rm --tty --volume $$(pwd)/share:/root/share
-pull-run: ## pull image and run
+pull-run: ## pull Docker image and run
 	docker pull $(image)
 	docker run $(options) $(image)
 
