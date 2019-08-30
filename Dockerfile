@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.10
 
 RUN apt update --yes && apt install --yes \
   exiv2 git hugin xvfb
