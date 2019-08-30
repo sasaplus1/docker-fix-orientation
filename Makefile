@@ -17,12 +17,12 @@ build: ## build Docker image
 
 .PHONY: pull-run
 pull-run: image := sasaplus1/$(tag)
-pull-run: options := --interactive --rm --tty --volume $$(pwd)/share:/root/share
+pull-run: options := --rm --volume $$(pwd)/share:/root/share
 pull-run: ## pull Docker image and run
 	docker pull $(image)
 	docker run $(options) $(image)
 
 .PHONY: run
-run: options := --interactive --rm --tty --volume $$(pwd)/share:/root/share
-run: ## run Docker container and attach TTY
+run: options := --rm --volume $$(pwd)/share:/root/share
+run: ## run Docker container
 	docker run $(options) $(tag)
