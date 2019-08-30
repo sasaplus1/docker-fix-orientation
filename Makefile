@@ -16,7 +16,7 @@ build: ## build Docker image
 	DOCKER_BUILDKIT=1 docker build -t $(tag) .
 
 .PHONY: pull-run
-pull-run: image := sasaplus1/docker-fix-orientation
+pull-run: image := sasaplus1/$(tag)
 pull-run: options := --interactive --rm --tty --volume $$(pwd)/share:/root/share
 pull-run: ## pull Docker image and run
 	docker pull $(image)
