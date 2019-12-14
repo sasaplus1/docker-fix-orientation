@@ -10,13 +10,7 @@ fix orientation for 360 panorama photo
 put JPEG files to `share` directory, and execute below:
 
 ```console
-$ make pull-run
-```
-
-or
-
-```console
-$ make build run
+$ docker-compose run --rm sh
 ```
 
 ## Dependencies
