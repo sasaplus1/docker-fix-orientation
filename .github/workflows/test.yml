@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       # https://commons.wikimedia.org/wiki/File:%27Greeley_Panorama%27_from_Opportunity%27s_Fifth_Martian_Winter.jpeg
       - run: cp "${GITHUB_WORKSPACE}/.github/workflows/test.jpg" "${GITHUB_WORKSPACE}/share"
-      - run: make build run
+      - run: make build
+      - run: make run
       - run: test -f share/test_xmp.jpg
       - uses: actions/upload-artifact@master
         with:
