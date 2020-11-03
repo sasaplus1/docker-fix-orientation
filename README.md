@@ -7,10 +7,16 @@ fix orientation for 360 panorama photo
 
 ## How to use
 
+build Docker image:
+
+```console
+$ make build
+```
+
 put JPEG files to `share` directory, and execute below:
 
 ```console
-$ docker-compose run --rm sh
+$ make run
 ```
 
 ## Dependencies
