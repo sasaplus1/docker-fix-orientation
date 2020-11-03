@@ -1,6 +1,6 @@
 # docker-fix-orientation
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/sasaplus1/docker-fix-orientation.svg)](https://hub.docker.com/r/sasaplus1/docker-fix-orientation)
+[![test](https://github.com/sasaplus1/docker-fix-orientation/workflows/test/badge.svg)](https://github.com/sasaplus1/docker-fix-orientation/actions?query=workflow%3Atest)
 [![renovate](https://badges.renovateapi.com/github/sasaplus1/docker-fix-orientation)](https://renovatebot.com)
 
 fix orientation for 360 panorama photo
