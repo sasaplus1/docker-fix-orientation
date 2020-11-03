@@ -17,5 +17,4 @@ jobs:
       - run: test -f share/test_xmp.jpg
       - uses: actions/upload-artifact@master
         with:
-          name: test_xmp.jpg
-          path: share/test_xmp.jpg
+          path: share/*.jpg
