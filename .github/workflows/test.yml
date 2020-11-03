@@ -9,8 +9,8 @@ jobs:
     name: testing fix orientation
     runs-on: ubuntu-latest
     steps:
-      - run: apt --yes update
-      - run: apt --yes install exiv2
+      - run: sudo apt --yes update
+      - run: sudo apt --yes install exiv2
       - uses: actions/checkout@v2
       # https://commons.wikimedia.org/wiki/File:%27Greeley_Panorama%27_from_Opportunity%27s_Fifth_Martian_Winter.jpeg
       - run: cp "${GITHUB_WORKSPACE}/.github/workflows/test.jpg" "${GITHUB_WORKSPACE}/share"
