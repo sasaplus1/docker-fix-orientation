@@ -1,7 +1,10 @@
-FROM ubuntu:latest
+FROM ubuntu:bionic
 
-RUN apt update --yes && apt install --yes \
-  exiv2 git hugin xvfb
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt --yes update && \
+  apt --yes install tzdata && \
+  apt --yes install exiv2 git hugin xvfb
 
 WORKDIR /root
 
@@ -15,4 +18,4 @@ RUN git clone https://github.com/mbirth/ricoh-theta.git
 
 RUN chmod +x ./ricoh-theta/*.sh
 
-CMD ["/bin/bash", "-c", "find ./share -type f -iname \\*.jpg -or -iname \\*.jpeg | xargs ./ricoh-theta/convert.sh"]
+ENTRYPOINT ["./ricoh-theta/convert.sh"]
