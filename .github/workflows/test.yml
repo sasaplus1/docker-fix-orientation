@@ -9,18 +9,8 @@ jobs:
     name: fix orientation
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt --yes update
-      - run: sudo apt --yes install exiv2
       - uses: actions/checkout@v2
-      # https://commons.wikimedia.org/wiki/File:%27Greeley_Panorama%27_from_Opportunity%27s_Fifth_Martian_Winter.jpeg
       - run: cp "${GITHUB_WORKSPACE}/.github/workflows/test.jpg" "${GITHUB_WORKSPACE}/share"
-      - run: exiv2 ex "${GITHUB_WORKSPACE}/share/test.jpg"
-      # update to testable metadata
-      - run: >
-          exiv2 in
-          -M 'set Xmp.GPano.PoseRollDegrees 20'
-          -M 'set Xmp.GPano.PosePitchDegrees 40'
-          "${GITHUB_WORKSPACE}/share/test.jpg"
       - run: make build
       - run: make run
       - run: test -f share/test_xmp.jpg
