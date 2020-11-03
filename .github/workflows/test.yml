@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: testing fix orientation
+    name: fix orientation
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt --yes update
